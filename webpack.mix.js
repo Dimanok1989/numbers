@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+// const { WebpackLaravelMixManifest } = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,18 +12,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    // .sass('resources/sass/app.scss', 'public/css')
-    .postCss('resources/css/app.css', 'public/css', [
+mix.js('resources/js/app.js', `js`)
+    // .sass('resources/sass/app.scss', `css`)
+    .postCss('resources/css/app.css', `css`, [
         require('tailwindcss'),
     ])
     .react()
-    .extract(['react']);
+    .extract();
 
 if (mix.inProduction()) {
-    mix.version();
+    mix
+        .setPublicPath('public/')
+        .version();
+} else {
+    mix
+        .setPublicPath('public/hot/')
+        .browserSync('127.0.0.1:8000');
 }
 
 mix.disableNotifications();
-
-mix.browserSync('127.0.0.1:8000');

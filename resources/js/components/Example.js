@@ -7,7 +7,7 @@ function Example() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header text-blue-600">Example Componens</div>
+                        <div className="card-header text-blue-600">Example Componen</div>
 
                         <div className="card-body bg-cyan-500 hover:bg-cyan-600">I'm an example component!</div>
                     </div>

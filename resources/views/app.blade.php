@@ -8,10 +8,10 @@
 
     <title>Номера</title>
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
-    <script src="{{ mix('/js/manifest.js') }}" defer></script>
-    <script src="{{ mix('/js/vendor.js') }}" defer></script>
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <link href="{{ mix('/css/app.css', mix_path("hot")) }}" rel="stylesheet" />
+    <script src="{{ mix('/js/manifest.js', mix_path("hot")) }}" defer></script>
+    <script src="{{ mix('/js/vendor.js', mix_path("hot")) }}" defer></script>
+    <script src="{{ mix('/js/app.js', mix_path("hot")) }}" defer></script>
 </head>
 
 <body>
