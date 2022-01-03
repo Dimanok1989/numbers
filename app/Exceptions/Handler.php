@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use App\Models\StatVisit;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -36,6 +38,13 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+
+        /** Отчет о посещении страницы с ошибкой */
+        $this->renderable(function (NotFoundHttpException $e, $request) {
+            if (!$request->is('api/*')) {
+                StatVisit::writeStatVisit($request, $e->getStatusCode());
+            }
         });
     }
 }

@@ -6,17 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Номера</title>
+    <title>Все номера</title>
 
-    <link href="{{ mix('/css/app.css', mix_path("hot")) }}" rel="stylesheet" />
-    <script src="{{ mix('/js/manifest.js', mix_path("hot")) }}" defer></script>
-    <script src="{{ mix('/js/vendor.js', mix_path("hot")) }}" defer></script>
-    <script src="{{ mix('/js/app.js', mix_path("hot")) }}" defer></script>
+    <link href="{{ mix('/css/app.css', mix_path('hot')) }}" rel="stylesheet" />
 </head>
 
 <body>
 
-    <div id="example"></div>
+    @yield('content')
+
+    <script src="{{ mix('/js/manifest.js', mix_path('hot')) }}" defer></script>
+    <script src="{{ mix('/js/vendor.js', mix_path('hot')) }}" defer></script>
+    <script src="{{ mix('/js/app.js', mix_path('hot')) }}" defer></script>
+
+    @yield('script')
 
 </body>
 
