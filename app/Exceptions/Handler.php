@@ -42,7 +42,7 @@ class Handler extends ExceptionHandler
 
         /** Отчет о посещении страницы с ошибкой */
         $this->renderable(function (NotFoundHttpException $e, $request) {
-            if (!$request->is('api/*')) {
+            if (!$request->is('api/*') and !$e->getMessage()) {
                 StatVisit::writeStatVisit($request, $e->getStatusCode());
             }
         });

@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
+
+/** Вывод кодов регионов страны */
+Route::get('/regions/{country}', 'Pages@regions');
+
+/** Вывод серий региона страны */
+Route::get('/series/{country}/{code}/{series?}', 'Pages@series');

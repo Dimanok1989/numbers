@@ -6,14 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Все номера</title>
+    <title>@yield('title', "Все номера")</title>
+
+    @hasSection('description')
+        <meta name="description" content="@yield('description')">
+    @endif
+
+    @hasSection('keywords')
+        <meta name="keywords" content="@yield('keywords')">
+    @endif
 
     <link href="{{ mix('/css/app.css', mix_path('hot')) }}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-slate-50 min-h-screen">
 
-    @yield('content')
+    @yield('header')
+
+    <div class="p-3">
+        @yield('content')
+    </div>
 
     <script src="{{ mix('/js/manifest.js', mix_path('hot')) }}" defer></script>
     <script src="{{ mix('/js/vendor.js', mix_path('hot')) }}" defer></script>

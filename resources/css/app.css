@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.number-ru {
+    border: 1px solid #000000;
+    margin: .25rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25rem;
+    width: 150px;
+    cursor: default;
+    font-size: 120%;
+    cursor: pointer;
+}
+.number-ru-series {
+    flex-grow: 1;
+    font-size: 120%;
+}
+.number-ru-region {
+    border-left: 1px solid #000000;
+    text-align: center;
+}
+.number-ru .ru-flag {
+    font-size: .5rem;
+    font-weight: 700;
+}
+.ru-flag img {
+    display: block;
+    width: 15px;
+    height: 9px;
+    margin-left: 2px;
+}
