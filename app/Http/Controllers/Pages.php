@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Regions\Regions;
+use App\Http\Controllers\Regions\Numbers;
 use Illuminate\Http\Request;
 
 class Pages extends Controller
@@ -74,5 +75,17 @@ class Pages extends Controller
             abort(404, "Данные региона не найдены");
 
         return view('pages.series-rus', $data);
+    }
+
+    /**
+     * Вывод страницы с номером
+     * 
+     * @param string $number
+     * @param string $country
+     * @return \Illuminate\View\View|never
+     */
+    public function number($number, $country)
+    {
+        return (new Numbers($country))->number($number);
     }
 }

@@ -11,13 +11,18 @@
     align-items: center;
     border-radius: .25rem;
     width: 150px;
+    height: 35px;
     cursor: default;
     font-size: 120%;
+    line-height: 120%;
     cursor: pointer;
 }
 .number-ru-series {
     flex-grow: 1;
     font-size: 120%;
+}
+.number-ru-series > * {
+    margin: 0 1px;
 }
 .number-ru-region {
     border-left: 1px solid #000000;
@@ -25,11 +30,55 @@
 }
 .number-ru .ru-flag {
     font-size: .5rem;
+    line-height: .5rem;
     font-weight: 700;
 }
 .ru-flag img {
     display: block;
     width: 15px;
-    height: 9px;
+    height: 8px;
     margin-left: 2px;
+}
+.rus-letter {
+    font-size: 75%;
+    margin-top: 2px;
+}
+
+
+.big-number-rus {
+    border: 2px solid;
+    border-radius: .4rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.big-number-rus-series {
+    padding: .25rem 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    line-height: 0.6;
+}
+
+.big-number-rus-region {
+    padding: .25rem 1rem;
+    border-left: 2px solid;
+    border-color: inherit;
+    text-align: center;
+    font-weight: 600;
+    min-width: 110px;
+    line-height: 0.8;
+}
+
+.big-number-rus-region img {
+    height: 1.125rem;
+    border: 1px solid #d1d1d1;
+    margin-left: .25rem;
+}
+
+.civil-rus {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
 }

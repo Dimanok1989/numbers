@@ -20,14 +20,14 @@
                 if ($row['number'] === '000') {
                     $url = "/series/ru/{$code}/{$row['series']}";
                 } else {
-                    $url = "/number/ru/{$row['series']}/{$row['number']}/{$code}";
+                    $url = "/n-{$row['one']}{$row['number']}{$row['two']}{$row['three']}{$code}/ru";
                 }
             @endphp
 
             <a class="number-ru bg-white hover:shadow hover:bg-slate-100" href="{{ $url }}">
 
                 <span class="flex justify-center number-ru-series px-1">
-                    <b>{{ $row['one_rus'] }}</b>
+                    <b class="rus-letter">{{ $row['one_rus'] }}</b>
                     @if ($row['number'] === '000')
                         <b class="opacity-30">0</b>
                         <b class="opacity-30">0</b>
@@ -35,8 +35,8 @@
                     @else
                         <b>{{ $row['number'] }}</b>
                     @endif
-                    <b>{{ $row['two_rus'] }}</b>
-                    <b>{{ $row['three_rus'] }}</b>
+                    <b class="rus-letter">{{ $row['two_rus'] }}</b>
+                    <b class="rus-letter">{{ $row['three_rus'] }}</b>
                 </span>
 
                 <span class="number-ru-region px-1">

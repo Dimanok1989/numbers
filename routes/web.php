@@ -22,3 +22,6 @@ Route::get('/regions/{country}', 'Pages@regions');
 
 /** Вывод серий региона страны */
 Route::get('/series/{country}/{code}/{series?}', 'Pages@series');
+
+/** Вывод станицы с номером */
+Route::get('/n-{number}/{country}', 'Pages@number');
