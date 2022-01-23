@@ -16,6 +16,11 @@
         <meta name="keywords" content="@yield('keywords')">
     @endif
 
+    <link href="{{ mix('/css/app.css', mix_path('hot')) }}" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
     @if (env('APP_ENV') == 'production')
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
@@ -37,16 +42,10 @@
             });
         </script>
         <noscript>
-            <div><img src="https://mc.yandex.ru/watch/{{ env('YANDEX_METRIKA_ID') }}"
-                    style="position:absolute; left:-9999px;" alt="" /></div>
+            <div><img src="https://mc.yandex.ru/watch/{{ env('YANDEX_METRIKA_ID') }}" style="position:absolute; left:-9999px;" alt="" /></div>
         </noscript>
         <!-- /Yandex.Metrika counter -->
     @endif
-
-    <link href="{{ mix('/css/app.css', mix_path('hot')) }}" rel="stylesheet" />
-</head>
-
-<body class="bg-slate-50 min-h-screen">
 
     @yield('header')
 
